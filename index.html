@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Practice Growth Plan — Maura Rupp, LCSW</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:    #F8F4EF;
+  --sage:     #6B8A6E;
+  --sage-lt:  #E8F0E9;
+  --terra:    #B87B6A;
+  --terra-lt: #F5EAE7;
+  --gold:     #C49A3C;
+  --gold-lt:  #FDF6EC;
+  --charcoal: #2C2A28;
+  --mid:      #6B6560;
+  --border:   #E0D9D2;
+  --white:    #FFFFFF;
+}
+
+body {
+  background: var(--cream);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--charcoal);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ── Sticky progress bar ── */
+#sticky-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--sage);
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+#sticky-bar .sb-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+#sticky-bar .sb-label {
+  opacity: 0.8;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+#sticky-bar .sb-uplift {
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+#sticky-bar .sb-yes-count {
+  background: rgba(255,255,255,0.2);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 12px;
+}
+#sticky-bar .scroll-to-plan {
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+#sticky-bar .scroll-to-plan:hover { background: rgba(255,255,255,0.28); }
+
+/* ── Page header ── */
+.page-header {
+  background: linear-gradient(135deg, var(--sage) 0%, #4a6e4d 100%);
+  color: white;
+  padding: 40px 20px 36px;
+  text-align: center;
+}
+.page-header .eyebrow {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+.page-header h1 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+.page-header .subtitle {
+  font-size: 14px;
+  opacity: 0.82;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.page-header .header-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.5);
+  object-fit: cover;
+  margin: 0 auto 18px;
+  display: block;
+}
+
+/* ── Website preview card ── */
+.site-preview-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  margin: 28px 0 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.site-preview-card h2 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 6px;
+}
+.site-preview-card .spc-desc {
+  font-size: 13px;
+  color: var(--mid);
+  margin-bottom: 18px;
+}
+.site-pages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+}
+.site-page-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  text-decoration: none;
+  color: var(--charcoal);
+  font-size: 13px;
+  font-weight: 500;
+  transition: border-color 0.15s, background 0.15s;
+}
+.site-page-link:hover {
+  border-color: var(--sage);
+  background: var(--sage-lt);
+  color: var(--sage);
+}
+.site-page-link .spl-icon {
+  font-size: 15px;
+  flex-shrink: 0;
+}
+.site-preview-note {
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--mid);
+  padding: 10px 14px;
+  background: var(--sage-lt);
+  border-radius: 7px;
+}
+
+/* ── Layout ── */
+.content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 16px 80px;
+}
+
+/* ── Income inputs card ── */
+.income-inputs {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  margin: 28px 0 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.income-inputs h2 {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 16px;
+}
+.inputs-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.input-group {
+  flex: 1;
+  min-width: 140px;
+}
+.input-group label {
+  display: block;
+  font-size: 12px;
+  color: var(--mid);
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.input-group input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 9px 12px;
+  font-size: 16px;
+  font-family: inherit;
+  color: var(--charcoal);
+  background: var(--cream);
+  transition: border-color 0.15s;
+}
+.input-group input:focus {
+  outline: none;
+  border-color: var(--sage);
+  background: white;
+}
+.income-display {
+  margin-top: 20px;
+  padding: 16px 18px;
+  background: var(--sage-lt);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.income-display .id-label {
+  font-size: 13px;
+  color: var(--sage);
+  font-weight: 500;
+}
+.income-display .id-amount {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--sage);
+  letter-spacing: -0.5px;
+}
+
+/* ── Uplift counter ── */
+.uplift-counter {
+  background: var(--gold-lt);
+  border: 1px solid #e8d4a8;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.uplift-counter .uc-label {
+  font-size: 13px;
+  color: #8a6e1c;
+  font-weight: 500;
+}
+.uplift-counter .uc-amount {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: -0.4px;
+  transition: all 0.3s;
+}
+.uplift-counter .uc-note {
+  font-size: 11px;
+  color: #a08030;
+  width: 100%;
+}
+
+/* ── Section header ── */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 36px 0 16px;
+}
+.section-header h2 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--mid);
+  white-space: nowrap;
+}
+.section-header .sh-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.section-desc {
+  font-size: 14px;
+  color: var(--mid);
+  margin-bottom: 16px;
+  line-height: 1.65;
+}
+
+/* ── Item card ── */
+.item-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.item-card.selected-yes {
+  border-color: var(--sage);
+  box-shadow: 0 0 0 2px rgba(107,138,110,0.15);
+}
+.item-card.selected-later {
+  opacity: 0.65;
+}
+.card-header {
+  padding: 18px 20px 14px;
+}
+.card-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+.tag-quick { background: var(--sage-lt); color: #3a5e3d; }
+.tag-listing { background: var(--gold-lt); color: #7a5e10; }
+.tag-website { background: var(--terra-lt); color: #7a3e2e; }
+.tag-sap { background: #EEF0F8; color: #3a3a6e; }
+.tag-grant { background: #f0f8ee; color: #2e5e30; }
+
+.card-title {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  letter-spacing: -0.2px;
+}
+.card-meta {
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.5;
+}
+.card-meta strong { color: var(--charcoal); }
+.income-impact {
+  display: inline-block;
+  margin-top: 6px;
+  background: var(--sage-lt);
+  color: var(--sage);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 4px;
+}
+.income-impact.impact-0 { background: #f0f0f0; color: var(--mid); }
+
+/* ── Preview block ── */
+.preview-block {
+  border-top: 1px solid var(--border);
+  background: #FAFAF8;
+}
+.preview-label {
+  padding: 10px 20px 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+.preview-content {
+  padding: 0 20px 16px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #3a3735;
+}
+.preview-content p { margin-bottom: 10px; }
+.preview-content p:last-child { margin-bottom: 0; }
+
+/* Cookie banner mockup */
+.cookie-mockup {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f5f5f3;
+}
+.cookie-mockup .cm-browser-bar {
+  background: #e8e4e0;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cm-dot { width: 10px; height: 10px; border-radius: 50%; }
+.cm-dot.red { background: #ff5f57; }
+.cm-dot.yellow { background: #febc2e; }
+.cm-dot.green { background: #28c840; }
+.cm-browser-bar .cm-url {
+  background: white;
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 11px;
+  color: #888;
+  flex: 1;
+  margin-left: 6px;
+}
+.cm-page-content {
+  padding: 20px;
+  min-height: 80px;
+  background: var(--cream);
+  position: relative;
+}
+.cm-page-lines { display: flex; flex-direction: column; gap: 8px; padding-bottom: 60px; }
+.cm-line { height: 10px; border-radius: 4px; background: var(--border); }
+.cm-banner {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  background: rgba(44,42,40,0.94);
+  color: white;
+  padding: 10px 14px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.cm-banner-text { flex: 1; line-height: 1.4; color: rgba(255,255,255,0.88); }
+.cm-banner-btn {
+  background: var(--sage);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: default;
+  white-space: nowrap;
+}
+
+/* Expand toggle */
+.expand-toggle {
+  display: block;
+  padding: 8px 20px 14px;
+  font-size: 13px;
+  color: var(--sage);
+  cursor: pointer;
+  font-weight: 500;
+  background: none;
+  border: none;
+  text-align: left;
+  width: 100%;
+}
+.expand-toggle:hover { text-decoration: underline; }
+.expandable-content { display: none; }
+.expandable-content.open { display: block; }
+
+/* Comparison layout */
+.compare-row {
+  display: flex;
+  gap: 12px;
+  padding: 16px 20px;
+}
+.compare-col {
+  flex: 1;
+  background: #fafafa;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+.compare-col.col-new { background: var(--sage-lt); border-color: #b8d0bb; }
+.compare-col h4 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 10px;
+}
+.compare-col.col-new h4 { color: var(--sage); }
+.compare-col ul {
+  list-style: none;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--charcoal);
+}
+.compare-col ul li { padding: 2px 0; }
+.compare-col ul li::before { content: ""; }
+.compare-col.col-new ul li::before { content: ""; }
+.col-old ul li { color: var(--mid); }
+
+/* Page list */
+.page-list {
+  padding: 0 20px 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.page-item {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 9px 12px;
+  font-size: 12px;
+}
+.page-item .pi-title { font-weight: 600; margin-bottom: 2px; }
+.page-item .pi-desc { color: var(--mid); font-size: 11px; }
+
+/* SAP table */
+.sap-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 0 20px;
+  width: calc(100% - 40px);
+  margin-bottom: 16px;
+}
+.sap-table th, .sap-table td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.sap-table th {
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--mid);
+  background: #fafaf8;
+}
+.sap-table .highlight-row td {
+  background: var(--sage-lt);
+  font-weight: 600;
+  color: var(--sage);
+}
+.sap-calc { font-size: 12px; color: var(--mid); }
+
+/* Income scenarios table */
+.scenario-table {
+  width: calc(100% - 40px);
+  margin: 0 20px 16px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.scenario-table th, .scenario-table td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.scenario-table th {
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--mid);
+  background: #fafaf8;
+}
+.scenario-table tr.sc-selected td { background: var(--sage-lt); }
+.scenario-table tr.sc-current td { font-weight: 600; }
+.scenario-table tr.sc-max td { background: var(--gold-lt); }
+.scenario-table .sc-amount { font-weight: 600; font-size: 15px; }
+.scenario-table .sc-delta { font-size: 12px; color: var(--sage); }
+
+/* Card buttons */
+.card-actions {
+  border-top: 1px solid var(--border);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  background: white;
+}
+.btn {
+  border: none;
+  border-radius: 7px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: inherit;
+  line-height: 1;
+}
+.btn-yes {
+  background: var(--sage);
+  color: white;
+}
+.btn-yes:hover { background: #5a7a5d; }
+.btn-yes.active {
+  background: #3d6040;
+  box-shadow: 0 0 0 2px rgba(107,138,110,0.3);
+}
+.btn-edit {
+  background: white;
+  color: var(--charcoal);
+  border: 1.5px solid var(--border);
+}
+.btn-edit:hover { border-color: var(--mid); }
+.btn-edit.active { border-color: var(--terra); color: var(--terra); }
+.btn-later {
+  background: none;
+  color: var(--mid);
+  padding: 9px 10px;
+}
+.btn-later:hover { color: var(--charcoal); }
+.btn-later.active { color: var(--terra); font-style: italic; }
+
+.selection-badge {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--mid);
+  display: none;
+}
+.selection-badge.visible { display: block; }
+.selected-yes .selection-badge { color: var(--sage); }
+.selected-later .selection-badge { color: var(--terra); }
+
+/* ── Final Plan section ── */
+#final-plan {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 28px 24px 24px;
+  margin-top: 32px;
+}
+#final-plan h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.plan-columns {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.plan-col {
+  flex: 1;
+  min-width: 200px;
+}
+.plan-col h3 {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+.plan-col.col-michael h3 { color: var(--sage); }
+.plan-col.col-you h3 { color: var(--terra); }
+.plan-col.col-later h3 { color: var(--mid); }
+.plan-list {
+  list-style: none;
+  font-size: 14px;
+}
+.plan-list li {
+  padding: 5px 0;
+  border-bottom: 1px solid #f0ece6;
+  color: var(--charcoal);
+  font-size: 13px;
+  line-height: 1.4;
+}
+.plan-list li:last-child { border-bottom: none; }
+.plan-list .empty-note { color: var(--mid); font-style: italic; font-size: 13px; }
+
+.send-btn {
+  display: block;
+  width: 100%;
+  background: var(--sage);
+  color: white;
+  border: none;
+  border-radius: 9px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 20px;
+  text-align: center;
+  font-family: inherit;
+  transition: background 0.15s;
+  letter-spacing: 0.2px;
+}
+.send-btn:hover { background: #5a7a5d; }
+.send-btn-note {
+  font-size: 12px;
+  color: var(--mid);
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 520px) {
+  .inputs-row { flex-direction: column; }
+  .plan-columns { flex-direction: column; }
+  .page-list { grid-template-columns: 1fr; }
+  .compare-row { flex-direction: column; }
+  #sticky-bar .sb-left { flex-direction: column; align-items: flex-start; gap: 2px; }
+  #sticky-bar .sb-uplift { font-size: 14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Sticky progress bar -->
+<div id="sticky-bar">
+  <div class="sb-left">
+    <div>
+      <div class="sb-label">Additional annual income you've selected</div>
+      <div class="sb-uplift" id="uplift-display">+$0</div>
+    </div>
+    <div class="sb-yes-count" id="yes-count-badge">0 items selected</div>
+  </div>
+  <button class="scroll-to-plan" onclick="scrollToPlan()">See your plan &darr;</button>
+</div>
+
+<!-- Page header -->
+<div class="page-header">
+  <img src="maura-photo.jpg" alt="Maura Rupp, LCSW" class="header-photo">
+  <div class="eyebrow">Siochain Hope Counseling</div>
+  <h1>Your Practice Growth Plan</h1>
+  <div class="subtitle">Go through this top to bottom. Click Yes on what you want — Michael handles the rest. At the end, send him your selections.</div>
+</div>
+
+<div class="content">
+
+  <!-- Income inputs -->
+  <div class="income-inputs">
+    <h2>About Your Practice</h2>
+    <div class="inputs-row">
+      <div class="input-group">
+        <label>Sessions per week</label>
+        <input type="number" id="sessions-per-week" value="15" min="1" max="60" oninput="recalcAll()">
+      </div>
+      <div class="input-group">
+        <label>Rate per session ($)</label>
+        <input type="number" id="rate-per-session" value="130" min="1" oninput="recalcAll()">
+      </div>
+      <div class="input-group">
+        <label>Weeks per year</label>
+        <input type="number" id="weeks-per-year" value="48" min="1" max="52" oninput="recalcAll()">
+      </div>
+    </div>
+    <div class="income-display">
+      <div class="id-label">Your current annual income (estimated)</div>
+      <div class="id-amount" id="current-income">$93,600</div>
+    </div>
+  </div>
+
+  <!-- Uplift counter -->
+  <div class="uplift-counter">
+    <div>
+      <div class="uc-label">Your estimated additional annual income</div>
+      <div class="uc-amount" id="uplift-counter-display">+$0</div>
+    </div>
+    <div class="uc-note">Updates as you click Yes below. Reflects conservative projections.</div>
+  </div>
+
+  <!-- Your New Website -->
+  <div class="site-preview-card">
+    <h2>Your New Website</h2>
+    <div class="spc-desc">9 pages, fully written, ready to go live. Click any page to preview it. Nothing is deployed yet — you decide what happens next.</div>
+    <div class="site-pages-grid">
+      <a href="site/index.html" target="_blank" class="site-page-link">
+        <span class="spl-icon">&#9749;</span> Home
+      </a>
+      <a href="site/about.html" target="_blank" class="site-page-link">
+        <span class="spl-icon">&#128100;</span> About Maura
+      </a>
+      <a href="site/trauma-therapy.html" target="_blank" class="site-page-link">
+        <span class="spl-icon">&#128149;</span> Trauma Therapy
+      </a>
+      <a href="site/emdr-therapy.html" target="_blank" class="site-page-link">
+        <span class="spl-icon">&#9881;</span> EMDR Therapy
+      </a>
+      <a href="site/play-therapy.html" target="_blank" class="site-page-link">
+        <span class="spl-icon">&#127912;</span> Play Therapy
+      </a>
+      <a href="site/chronic-illness-therapy.html" target="_blank" class="site-page-link">
+        <span class="spl-icon">&#128138;</span> Chronic Illness
+      </a>
+      <a href="site/sap-evaluation.html" target="_blank" class="site-page-link">
+        <span class="spl-icon">&#128203;</span> SAP Evaluations
+      </a>
+      <a href="site/faq.html" target="_blank" class="site-page-link">
+        <span class="spl-icon">&#10067;</span> FAQ
+      </a>
+      <a href="site/contact.html" target="_blank" class="site-page-link">
+        <span class="spl-icon">&#9993;</span> Contact
+      </a>
+    </div>
+    <div class="site-preview-note">The About page already has your photo. The contact form goes to your email. All pages have proper SEO, mobile layout, and are ready to deploy to your domain whenever you're ready.</div>
+  </div>
+
+  <!-- =========================================================
+       SECTION 1: QUICK WINS
+  ========================================================= -->
+  <div class="section-header">
+    <h2>Section 1 &mdash; Quick Wins</h2>
+    <div class="sh-rule"></div>
+  </div>
+  <p class="section-desc">Under 30 minutes each. Michael does everything — you do nothing except read what's here and say yes or not yet.</p>
+
+  <!-- 1a Cookie Banner -->
+  <div class="item-card" id="card-cookie">
+    <div class="card-header">
+      <div class="card-tag tag-quick">Quick Win &mdash; 15 min</div>
+      <div class="card-title">Cookie Banner</div>
+      <div class="card-meta">
+        A small notice at the bottom of your site when people visit. <strong>Protects you</strong> if a client ever questions what data the site collects — and signals that you take privacy seriously. Michael adds it. You do nothing.
+      </div>
+      <div class="income-impact impact-0">No income impact &mdash; shows professionalism</div>
+    </div>
+    <div class="preview-block">
+      <div class="preview-label">What it looks like on your site</div>
+      <div class="preview-content">
+        <div class="cookie-mockup">
+          <div class="cm-browser-bar">
+            <div class="cm-dot red"></div>
+            <div class="cm-dot yellow"></div>
+            <div class="cm-dot green"></div>
+            <div class="cm-url">siochainhopecounseling.com</div>
+          </div>
+          <div class="cm-page-content">
+            <div class="cm-page-lines">
+              <div class="cm-line" style="width:70%"></div>
+              <div class="cm-line" style="width:90%"></div>
+              <div class="cm-line" style="width:55%"></div>
+            </div>
+            <div class="cm-banner">
+              <div class="cm-banner-text">This site uses a single cookie to remember your preferences (like dismissing this notice). No tracking. No advertising. No third-party data collection. Questions? Email us.</div>
+              <div class="cm-banner-btn">Got it</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="btn btn-yes" onclick="selectItem('cookie','yes',0,'Michael adds cookie banner to your site')">Yes, add it</button>
+      <button class="btn btn-later" onclick="selectItem('cookie','later',0,'Cookie banner')">Later</button>
+      <span class="selection-badge" id="badge-cookie"></span>
+    </div>
+  </div>
+
+  <!-- 1b Privacy Policy -->
+  <div class="item-card" id="card-privacy">
+    <div class="card-header">
+      <div class="card-tag tag-quick">Quick Win &mdash; Michael writes it</div>
+      <div class="card-title">Privacy Policy</div>
+      <div class="card-meta">
+        A page on your site explaining how you handle client information. <strong>Protects you and your clients</strong> — and clients expect to see it. Michael writes it and adds it. You review the text below and approve.
+      </div>
+      <div class="income-impact impact-0">No income impact &mdash; legal protection</div>
+    </div>
+    <div class="preview-block">
+      <div class="preview-label">The privacy policy — review and approve</div>
+      <div class="preview-content">
+        <p><strong>Privacy Policy &mdash; Siochain Hope Counseling, LLC</strong></p>
+        <p>Siochain Hope Counseling, LLC (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) is committed to protecting the privacy of all visitors to this website and all clients of our practice. This Privacy Policy explains what information we collect, how we use it, and the choices you have.</p>
+        <p>This website does not use advertising trackers, retargeting pixels, or third-party analytics services that build profiles about you. We may use a single first-party cookie to remember your preference for dismissing the cookie notice. No personally identifiable information is collected through that cookie.</p>
+        <p>If you complete a contact form on this website, we collect the information you provide (such as your name and email address) solely for the purpose of responding to your inquiry. We do not sell, trade, or share your contact information with any third party.</p>
+        <p>All clinical records and protected health information are handled in accordance with the Health Insurance Portability and Accountability Act (HIPAA). Our Notice of Privacy Practices, which describes how we use and protect your health information as a client, is available separately on this website.</p>
+      </div>
+      <button class="expand-toggle" onclick="toggleExpand('privacy-full', this)">Show full policy &darr;</button>
+      <div class="expandable-content" id="privacy-full">
+        <div class="preview-content">
+          <p>This website is hosted on Squarespace. Squarespace may collect standard server logs (such as IP addresses and page views) as part of its hosting infrastructure. These logs are not shared with Siochain Hope Counseling and are governed by Squarespace&rsquo;s own privacy policy.</p>
+          <p>If you communicate with us by email, please be aware that standard email is not a fully secure channel. Do not send sensitive health information via email. For secure communication as an existing client, please use the messaging feature within our practice management platform (SimplePractice).</p>
+          <p>You have the right to request access to any personal information we hold about you, to request correction of inaccurate information, and to request deletion of your information where no legal obligation requires us to retain it. To make any of these requests, contact us at mrupp@siochainhopecounseling.com.</p>
+          <p>This policy may be updated periodically. The date of the most recent update appears at the bottom of this page. Continued use of this website following any update constitutes your acceptance of the revised policy.</p>
+          <p><em>Last updated: April 2026</em></p>
+        </div>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="btn btn-yes" onclick="selectItem('privacy','yes',0,'Michael adds privacy policy to your site')">Looks good, add it</button>
+      <button class="btn btn-edit" onclick="selectItem('privacy','edit',0,'Privacy policy — wants edits')">Want to review</button>
+      <button class="btn btn-later" onclick="selectItem('privacy','later',0,'Privacy policy')">Later</button>
+      <span class="selection-badge" id="badge-privacy"></span>
+    </div>
+  </div>
+
+  <!-- 1c HIPAA Notice -->
+  <div class="item-card" id="card-hipaa">
+    <div class="card-header">
+      <div class="card-tag tag-quick">Quick Win &mdash; Required by law</div>
+      <div class="card-title">HIPAA Notice of Privacy Practices</div>
+      <div class="card-meta">
+        A short notice every healthcare provider is required to have. <strong>Protects you</strong> if a client ever raises a privacy concern. Michael writes it and adds it to your site. You review the text here.
+      </div>
+      <div class="income-impact impact-0">No income impact &mdash; legal compliance</div>
+    </div>
+    <div class="preview-block">
+      <div class="preview-label">Notice of Privacy Practices — review</div>
+      <div class="preview-content">
+        <p><strong>Notice of Privacy Practices &mdash; Siochain Hope Counseling, LLC</strong></p>
+        <p><em>Effective Date: April 1, 2026</em></p>
+        <p>THIS NOTICE DESCRIBES HOW MEDICAL INFORMATION ABOUT YOU MAY BE USED AND DISCLOSED AND HOW YOU CAN GET ACCESS TO THIS INFORMATION. PLEASE REVIEW IT CAREFULLY.</p>
+        <p><strong>Our Duty to Safeguard Your Protected Health Information.</strong> We are required by law to maintain the privacy of your protected health information (PHI) and to provide you with this notice of our legal duties and privacy practices. We are required to abide by the terms of this notice while it is in effect.</p>
+      </div>
+      <button class="expand-toggle" onclick="toggleExpand('hipaa-full', this)">Show full notice &darr;</button>
+      <div class="expandable-content" id="hipaa-full">
+        <div class="preview-content">
+          <p><strong>How We May Use and Disclose Your Health Information.</strong> We use and disclose your health information for treatment, payment, and health care operations. For treatment, we may share your information with other health care providers involved in your care. For payment, we may share your information as needed to process a claim or obtain reimbursement. For health care operations, we may use your information to evaluate the quality of care we provide.</p>
+          <p><strong>Uses and Disclosures Requiring Your Authorization.</strong> We will obtain your written authorization before using or disclosing your health information for any purpose not described in this notice, including most uses of psychotherapy notes, marketing, and sale of your information.</p>
+          <p><strong>Special Protections for Psychotherapy Notes.</strong> Your psychotherapy notes (private notes kept by your therapist separate from your general medical record) receive extra protections under HIPAA. We will not disclose psychotherapy notes without your written authorization, except as required by law.</p>
+          <p><strong>Your Rights Regarding Your Health Information.</strong> You have the right to inspect and copy your health information; to request a restriction on certain uses or disclosures; to request that we communicate with you in a particular way or at a particular location; to request an amendment to your record; to receive an accounting of disclosures; and to receive a paper copy of this notice.</p>
+          <p><strong>Required Disclosures.</strong> We are required to disclose your health information when required by law, including to prevent or lessen a serious and imminent threat to your health or safety or the health or safety of another person, or when required by a court order.</p>
+          <p><strong>Complaints.</strong> If you believe your privacy rights have been violated, you may file a complaint with us or with the Secretary of the U.S. Department of Health and Human Services. We will not retaliate against you for filing a complaint. Contact us at: mrupp@siochainhopecounseling.com or (501) 943-5808.</p>
+          <p><em>Questions? Contact Maura Rupp, LCSW &mdash; mrupp@siochainhopecounseling.com</em></p>
+        </div>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="btn btn-yes" onclick="selectItem('hipaa','yes',0,'Michael adds HIPAA Notice of Privacy Practices to your site')">Looks good, add it</button>
+      <button class="btn btn-edit" onclick="selectItem('hipaa','edit',0,'HIPAA Notice — wants to review')">Want to review</button>
+      <button class="btn btn-later" onclick="selectItem('hipaa','later',0,'HIPAA Notice')">Later</button>
+      <span class="selection-badge" id="badge-hipaa"></span>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       SECTION 2: DIRECTORIES
+  ========================================================= -->
+  <div class="section-header">
+    <h2>Section 2 &mdash; Directory Listings</h2>
+    <div class="sh-rule"></div>
+  </div>
+  <p class="section-desc">These are the places people search when they&rsquo;re looking for a therapist. Your profile text is already written — you just need to approve the words.</p>
+
+  <!-- 2a Psychology Today -->
+  <div class="item-card" id="card-pt">
+    <div class="card-header">
+      <div class="card-tag tag-listing">Directory &mdash; $29.95/mo</div>
+      <div class="card-title">Psychology Today</div>
+      <div class="card-meta">
+        The largest therapist directory in the U.S. Your profile text is written below. <strong>Requires your PT login</strong> — Michael can set it up if you share access, or you can paste the text yourself.
+      </div>
+      <div class="income-impact">+$8,100/year <span style="font-weight:400;font-size:11px">(conservative: 5 new clients)</span></div>
+    </div>
+    <div class="preview-block">
+      <div class="preview-label">Your profile bio — approve or request edits</div>
+      <div class="preview-content">
+        <p>Many people who reach out to me say the same thing: "I don't even know where to start." They've been carrying something heavy for a long time — whether it's anxiety that follows them everywhere, grief that won't lift, a body that keeps letting them down, or a childhood they've spent years trying to make sense of. If that sounds like you, you're in the right place. Starting is the hardest part, and you've already done it by reading this.</p>
+        <p>I'm Maura Rupp, a Licensed Clinical Social Worker (LCSW) in Pennsylvania. I work with adults and children navigating trauma, anxiety, depression, grief, chronic illness, and life transitions. My approach is trauma-informed at its core, which means I understand that what happened to you matters — and that healing isn't about willpower or "getting over it." It's about understanding your nervous system, rebuilding your sense of safety, and moving forward at a pace that actually works for your life.</p>
+        <p>I don't work from a script. Therapy isn't one-size-fits-all, and the most effective work happens when we build a relationship where you feel genuinely heard rather than processed. I draw from multiple evidence-based approaches — EMDR, cognitive-behavioral therapy, mindfulness, attachment-based work, and play therapy — because different people need different tools. My job is to figure out what fits you, not to squeeze you into a method.</p>
+      </div>
+      <button class="expand-toggle" onclick="toggleExpand('pt-full', this)">Show full bio (620 words) &darr;</button>
+      <div class="expandable-content" id="pt-full">
+        <div class="preview-content">
+          <p>One of the most powerful tools I use is EMDR — Eye Movement Desensitization and Reprocessing. EMDR was developed specifically to treat trauma and PTSD, and it has one of the strongest evidence bases in mental health treatment. It works by helping the brain fully process distressing memories that have become "stuck," reducing their emotional intensity without requiring you to talk through every detail in depth. EMDR can help with trauma from childhood, accidents, medical experiences, sexual abuse, grief, and anxiety — and it often produces results faster than traditional talk therapy alone. If you've tried therapy before and felt like you were circling the same material, EMDR may offer a different path through.</p>
+          <p>I also specialize in chronic illness and the emotional toll that living in an unpredictable body takes on a person. When you're managing a long-term medical condition, the mental health piece is rarely addressed with the same seriousness as the physical one — but it should be. Chronic illness brings grief, identity disruption, medical anxiety, relationship strain, and sometimes real trauma from difficult diagnoses and procedures. I understand this intersection not only clinically, but personally. If you've ever been told "it's just stress" by a doctor who didn't listen, or felt like no one in your life quite understands what you're carrying — that's exactly the kind of space I try to create here.</p>
+          <p>For clients in safety-sensitive positions who need a Substance Abuse Professional (SAP) evaluation, I provide DOT-compliant SAP evaluations for Pennsylvania and Delaware residents. These evaluations are required for return-to-duty determinations following a violation of federal DOT drug and alcohol regulations.</p>
+          <p>I work with children using play therapy — a developmentally appropriate approach that allows children to communicate and process their experiences through play rather than words. Through play therapy, children can work through anxiety, behavioral challenges, family transitions, trauma, and grief in a way that feels safe and natural to them. Parents are partners in this process.</p>
+          <p>You don't have to have it figured out to reach out. I offer a brief phone consultation so we can talk before you commit to anything. I'd love to hear what's bringing you here.</p>
+          <p><em>Fees: $130–150/session. Limited sliding scale spots available. Currently accepting new clients. Free initial consultation.</em></p>
+        </div>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="btn btn-yes" onclick="selectItem('pt','yes',8100,'Psychology Today listing (Michael sets up with your login)')">Text looks good</button>
+      <button class="btn btn-edit" onclick="selectItem('pt','edit',0,'Psychology Today — wants edits to bio')">Want edits</button>
+      <button class="btn btn-later" onclick="selectItem('pt','later',0,'Psychology Today')">Later</button>
+      <span class="selection-badge" id="badge-pt"></span>
+    </div>
+  </div>
+
+  <!-- 2b TherapyDen -->
+  <div class="item-card" id="card-td">
+    <div class="card-header">
+      <div class="card-tag tag-listing">Directory &mdash; Free</div>
+      <div class="card-title">TherapyDen</div>
+      <div class="card-meta">
+        A free listing on a directory that skews younger and more values-conscious — actively sought by LGBTQ+ and progressive clients. Your profile is written below. <strong>Michael sets it up. 30 minutes.</strong>
+      </div>
+      <div class="income-impact">+$2,700/year <span style="font-weight:400;font-size:11px">(conservative: 2 new clients)</span></div>
+    </div>
+    <div class="preview-block">
+      <div class="preview-label">Your TherapyDen bio — approve or request edits</div>
+      <div class="preview-content">
+        <p>I know how hard it is to reach out for help. Most people who contact me have been sitting with something difficult for a long time — anxiety that's become background noise, a loss they can't fully grieve, a body that's turned unpredictable, or old wounds that keep showing up in present-day life. You don't have to have it figured out to get in touch. Starting is the work.</p>
+        <p>I'm Maura Rupp, a Licensed Clinical Social Worker (LCSW) in Pennsylvania. I work with adults and children navigating trauma, anxiety, depression, grief, chronic illness, life transitions, childhood trauma, and relationship challenges. My practice is trauma-informed, collaborative, and genuinely non-judgmental — and I mean that in the way that actually matters, not as a bullet point.</p>
+        <p><strong>My practice is LGBTQ+ affirming and welcoming to people of all identities, relationship structures, and backgrounds. You don't need to explain yourself here.</strong></p>
+      </div>
+      <button class="expand-toggle" onclick="toggleExpand('td-full', this)">Show full bio &darr;</button>
+      <div class="expandable-content" id="td-full">
+        <div class="preview-content">
+          <p>I don't work from a formula. I draw from EMDR, cognitive-behavioral therapy, attachment-based approaches, mindfulness, and play therapy — because what works for one person doesn't work for everyone. My job is to stay curious about what you actually need, not to fit you into a predetermined treatment plan. We figure it out together.</p>
+          <p>One of the most powerful tools I use is EMDR (Eye Movement Desensitization and Reprocessing) — an evidence-based therapy with one of the strongest research records for healing trauma and PTSD. A lot of people come to me after years of talk therapy that felt circular, and EMDR offers a different kind of movement. It's not about re-living what happened — it's about getting unstuck from it.</p>
+          <p>I also specialize in working with people who are managing chronic illness or health conditions. If your body has become something you're in conflict with, or if you've received a scary diagnosis and no one on your medical team has asked how you're doing emotionally — that gap is real and it matters. I understand this personally, not just clinically.</p>
+          <p>For children, I use play therapy — a developmentally appropriate, research-supported approach that lets kids process their experiences through what comes naturally to them: play. I work collaboratively with parents throughout.</p>
+          <p>I also provide SAP (Substance Abuse Professional) evaluations for employees in DOT-regulated industries. If you or someone you know needs this, contact me directly.</p>
+          <p>If any of this resonates — or if you're not sure and just want to talk first — reach out. I offer a brief free phone consultation. No pressure, no commitment. Just a conversation.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="btn btn-yes" onclick="selectItem('td','yes',2700,'TherapyDen free listing (Michael sets up)')">Text looks good</button>
+      <button class="btn btn-edit" onclick="selectItem('td','edit',0,'TherapyDen — wants edits to bio')">Want edits</button>
+      <button class="btn btn-later" onclick="selectItem('td','later',0,'TherapyDen')">Later</button>
+      <span class="selection-badge" id="badge-td"></span>
+    </div>
+  </div>
+
+  <!-- 2c Google Business -->
+  <div class="item-card" id="card-gbp">
+    <div class="card-header">
+      <div class="card-tag tag-listing">Directory &mdash; Free</div>
+      <div class="card-title">Google Business Profile</div>
+      <div class="card-meta">
+        Shows your practice when people search &ldquo;therapist West Chester PA&rdquo; on Google. Your description is written below. <strong>Needs one phone verification to your number</strong> — you receive a code, Michael handles the rest.
+      </div>
+      <div class="income-impact">+$4,050/year <span style="font-weight:400;font-size:11px">(conservative: 3 new clients)</span></div>
+    </div>
+    <div class="preview-block">
+      <div class="preview-label">Your Google Business description (471 characters)</div>
+      <div class="preview-content">
+        <p style="background:var(--cream);border-left:3px solid var(--sage);padding:12px 14px;border-radius:0 6px 6px 0;font-style:italic;">Maura Rupp, LCSW, is a Licensed Clinical Social Worker offering individual therapy for adults and children in West Chester, PA and via telehealth throughout Pennsylvania. Specialties include trauma, PTSD, EMDR therapy, play therapy for children, chronic illness, grief, anxiety, and SAP evaluations for DOT-regulated employees. Now accepting new clients. Telehealth sessions available via secure HIPAA-compliant video. Warm, collaborative care for people ready to feel better.</p>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="btn btn-yes" onclick="selectItem('gbp','yes',4050,'Google Business Profile (you verify by phone, Michael does the rest)')">Text looks good</button>
+      <button class="btn btn-edit" onclick="selectItem('gbp','edit',0,'Google Business Profile — wants edits')">Want edits</button>
+      <button class="btn btn-later" onclick="selectItem('gbp','later',0,'Google Business Profile')">Later</button>
+      <span class="selection-badge" id="badge-gbp"></span>
+    </div>
+  </div>
+
+  <!-- 2d Sharecare -->
+  <div class="item-card" id="card-sharecare">
+    <div class="card-header">
+      <div class="card-tag tag-listing">Fix Existing Listing &mdash; Urgent</div>
+      <div class="card-title">Sharecare — Fix the &ldquo;Not Accepting Patients&rdquo; Error</div>
+      <div class="card-meta">
+        <strong>You already have a profile here — and it currently says you are not accepting new patients.</strong> This shows up in Google health search results. Anyone searching for you right now sees a closed door. You did not set this up — it was auto-generated from insurance databases. Michael can fix it in 20–30 minutes.
+      </div>
+      <div class="income-impact">+$1,350/year <span style="font-weight:400;font-size:11px">(conservative: 1 new client from corrected listing)</span></div>
+    </div>
+    <div class="preview-block">
+      <div class="preview-label">Short bio for your corrected Sharecare profile</div>
+      <div class="preview-content">
+        <p style="background:var(--cream);border-left:3px solid var(--terra);padding:12px 14px;border-radius:0 6px 6px 0;font-style:italic;">Maura Rupp, LCSW — trauma-informed therapy for adults and children in West Chester, PA. EMDR, play therapy, chronic illness support, SAP evaluations. Telehealth available. Now accepting new clients.</p>
+        <p style="margin-top:12px;font-size:12px;color:var(--terra);"><strong>Current status on Sharecare: NOT ACCEPTING NEW PATIENTS.</strong> This is wrong and actively turning away clients. One click to fix.</p>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="btn btn-yes" onclick="selectItem('sharecare','yes',1350,'Fix Sharecare listing (Michael claims and corrects it)')">Yes, fix it</button>
+      <button class="btn btn-later" onclick="selectItem('sharecare','later',0,'Sharecare fix')">Later</button>
+      <span class="selection-badge" id="badge-sharecare"></span>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       SECTION 3: NEW WEBSITE
+  ========================================================= -->
+  <div class="section-header">
+    <h2>Section 3 &mdash; New Website</h2>
+    <div class="sh-rule"></div>
+  </div>
+  <p class="section-desc">Your current site does everything it needs to — this is about making it easier for new clients to find you on Google. Dedicated pages for each specialty rank in search in ways a single page can&rsquo;t.</p>
+
+  <div class="item-card" id="card-website">
+    <div class="card-header">
+      <div class="card-tag tag-website">Michael builds and deploys</div>
+      <div class="card-title">9-Page SEO-Optimized Site</div>
+      <div class="card-meta">
+        Same clean look. Built to rank. Michael builds and deploys everything — you review and approve before it goes live.
+      </div>
+      <div class="income-impact">+$5,400/year <span style="font-weight:400;font-size:11px">(conservative: 4 new clients via Google organic)</span></div>
+    </div>
+    <div class="preview-block">
+      <div class="preview-label">Current vs. new</div>
+      <div class="compare-row">
+        <div class="compare-col col-old">
+          <h4>Current site</h4>
+          <ul>
+            <li>Squarespace, 1 page</li>
+            <li>No specialty-specific pages</li>
+            <li>Not indexed for specific searches like "EMDR therapist Chester County"</li>
+            <li>Invisible to Google searches by diagnosis or treatment type</li>
+          </ul>
+        </div>
+        <div class="compare-col col-new">
+          <h4>New site</h4>
+          <ul>
+            <li>9 dedicated pages</li>
+            <li>Google-optimized for each specialty</li>
+            <li>Ranks for "EMDR therapist West Chester PA," "trauma therapist Chester County," "play therapy children West Chester," etc.</li>
+            <li>Same calm, professional look and feel</li>
+          </ul>
+        </div>
+      </div>
+      <div class="preview-label" style="padding-top:14px;">How the About page looks with your photo</div>
+      <div style="display:flex;gap:16px;align-items:flex-start;margin-top:10px;padding:16px;background:var(--cream);border-radius:8px;">
+        <img src="maura-photo.jpg" alt="Maura Rupp" style="width:120px;height:160px;object-fit:cover;object-position:top;border-radius:8px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.12);">
+        <div>
+          <div style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--terra);margin-bottom:6px;">Meet Maura</div>
+          <div style="font-size:16px;font-weight:600;color:var(--charcoal);margin-bottom:8px;">I started this practice because I believe everyone deserves care that actually fits them.</div>
+          <div style="font-size:13px;color:var(--mid);line-height:1.6;">I'm Maura Rupp, a Licensed Clinical Social Worker based in West Chester, Pennsylvania. I specialize in trauma, EMDR therapy, and supporting adults and children navigating the unexpected ways life can unravel...</div>
+        </div>
+      </div>
+      <div class="preview-label" style="padding-top:14px;">The 9 pages</div>
+    </div>
+    <div class="page-list">
+      <div class="page-item">
+        <div class="pi-title">Home</div>
+        <div class="pi-desc">Landing page with clear call to action</div>
+      </div>
+      <div class="page-item">
+        <div class="pi-title">About Maura</div>
+        <div class="pi-desc">Your background, credentials, and approach</div>
+      </div>
+      <div class="page-item">
+        <div class="pi-title">Trauma &amp; PTSD Therapy</div>
+        <div class="pi-desc">Dedicated page — ranks for trauma searches</div>
+      </div>
+      <div class="page-item">
+        <div class="pi-title">EMDR Therapy</div>
+        <div class="pi-desc">Explains EMDR — high search volume, low competition locally</div>
+      </div>
+      <div class="page-item">
+        <div class="pi-title">Play Therapy for Children</div>
+        <div class="pi-desc">Targets parents searching for child therapists</div>
+      </div>
+      <div class="page-item">
+        <div class="pi-title">Chronic Illness Therapy</div>
+        <div class="pi-desc">Underserved niche — strong local ranking potential</div>
+      </div>
+      <div class="page-item">
+        <div class="pi-title">SAP Evaluations</div>
+        <div class="pi-desc">High-value service, distinct search intent</div>
+      </div>
+      <div class="page-item">
+        <div class="pi-title">Fees &amp; FAQs</div>
+        <div class="pi-desc">Answers common questions before they call</div>
+      </div>
+      <div class="page-item">
+        <div class="pi-title">Contact &amp; Scheduling</div>
+        <div class="pi-desc">Clear path to booking a consultation</div>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="btn btn-yes" onclick="selectItem('website','yes',5400,'New 9-page website (Michael builds and deploys, you review before launch)')">Yes, let&rsquo;s do it</button>
+      <button class="btn btn-edit" onclick="selectItem('website','edit',0,'New website — wants more information')">Tell me more</button>
+      <button class="btn btn-later" onclick="selectItem('website','later',0,'New website')">Later</button>
+      <span class="selection-badge" id="badge-website"></span>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       SECTION 4: SAP EVALUATIONS
+  ========================================================= -->
+  <div class="section-header">
+    <h2>Section 4 &mdash; SAP Evaluations</h2>
+    <div class="sh-rule"></div>
+  </div>
+  <p class="section-desc">You're already listed as a SAP provider. This section is about making that visible and findable — and turning it into a real revenue stream.</p>
+
+  <div class="item-card" id="card-sap">
+    <div class="card-header">
+      <div class="card-tag tag-sap">Existing credential &mdash; Untapped revenue</div>
+      <div class="card-title">SAP Evaluation Outreach</div>
+      <div class="card-meta">
+        Companies with DOT-regulated employees — truck drivers, pilots, transit workers — are <strong>required by federal law</strong> to send employees for a SAP evaluation after a substance violation. You're already qualified. This is about making that findable and doing direct outreach to fleet employers. <strong>Michael handles all outreach.</strong> You confirm your 49 CFR Part 40 training is current.
+      </div>
+    </div>
+    <div class="preview-block">
+      <div class="preview-label">Income model — at $450/evaluation</div>
+      <table class="sap-table">
+        <thead>
+          <tr>
+            <th>Volume</th>
+            <th>Per month</th>
+            <th>Per year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2 evals/month</td>
+            <td>+$900</td>
+            <td class="sap-calc">+$10,800/yr</td>
+          </tr>
+          <tr class="highlight-row">
+            <td>5 evals/month</td>
+            <td>+$2,250</td>
+            <td class="sap-calc">+$27,000/yr</td>
+          </tr>
+          <tr>
+            <td>10 evals/month</td>
+            <td>+$4,500</td>
+            <td class="sap-calc">+$54,000/yr</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="preview-label">SAP service page preview</div>
+      <div class="preview-content">
+        <p><strong>DOT Substance Abuse Professional (SAP) Evaluations</strong></p>
+        <p>If you or an employee has received a federal DOT drug or alcohol violation, a SAP evaluation is the required first step in the return-to-duty process. Federal law (49 CFR Part 40) mandates that any employee in a safety-sensitive DOT-regulated position — including trucking, aviation, transit, railroad, and pipeline — must complete a SAP evaluation before returning to duty. This is not optional.</p>
+      </div>
+      <div class="preview-label">Fleet outreach email — subject + first lines</div>
+      <div class="preview-content">
+        <p><strong>Subject: SAP evaluation services for your DOT-regulated drivers — West Chester PA</strong></p>
+        <p>I'm Maura Rupp, a Licensed Clinical Social Worker (LCSW) and certified Substance Abuse Professional serving Chester County and surrounding areas. I provide DOT-compliant SAP evaluations for employees in safety-sensitive positions following a federal drug or alcohol violation.</p>
+        <p>If your company employs DOT-regulated drivers or other safety-sensitive workers, having a reliable SAP on file means your HR team is never scrambling to find one under deadline pressure.</p>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="btn btn-yes" onclick="selectItem('sap','yes',27000,'SAP eval outreach — Michael handles outreach, you confirm 49 CFR training is current')">Yes, I&rsquo;m SAP certified — do this</button>
+      <button class="btn btn-edit" onclick="selectItem('sap','verify',0,'SAP evaluations — needs to verify certification status')">I need to verify</button>
+      <button class="btn btn-later" onclick="selectItem('sap','later',0,'SAP evaluations')">Not right now</button>
+      <span class="selection-badge" id="badge-sap"></span>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       SECTION 5: GRANTS
+  ========================================================= -->
+  <div class="section-header">
+    <h2>Section 5 &mdash; Grants</h2>
+    <div class="sh-rule"></div>
+  </div>
+  <p class="section-desc">These are grants — not loans. You don&rsquo;t pay them back. Michael drafted the applications. You can submit them yourself, or Michael can walk through submission with you on a call. Either way works — your call.</p>
+
+  <!-- 5a Amber Grant -->
+  <div class="item-card" id="card-amber">
+    <div class="card-header">
+      <div class="card-tag tag-grant">Grant &mdash; $10,000</div>
+      <div class="card-title">Amber Grant — WomensNet</div>
+      <div class="card-meta">
+        Rolling monthly deadline, for women-owned businesses. $15 application fee. One winner per month from ~1,000 entries. Essay is already written below — review it and tell Michael if it sounds like you. <strong>You can submit it yourself (15 minutes at ambergrant.com) or Michael can walk through it with you on a call.</strong>
+      </div>
+      <div class="income-impact">$10,000 lump sum <span style="font-weight:400;font-size:11px">(moderate probability)</span></div>
+    </div>
+    <div class="preview-block">
+      <div class="preview-label">Grant essay — Michael drafted it, you review</div>
+      <div class="preview-content">
+        <p>I became a therapist because I understood, from the inside, what it means to need one and not be able to find the right person.</p>
+        <p>I run Siochain Hope Counseling — a solo therapy practice in West Chester, Pennsylvania. I'm a Licensed Clinical Social Worker (LCSW), which is the highest independent credential in social work, and I've spent my career working with people who tend to fall through the gaps: adults and children navigating trauma, families in crisis, people managing chronic illness alongside the invisible weight of anxiety and depression, and LGBTQ+ individuals in suburban communities where affirming mental health providers are genuinely hard to find.</p>
+        <p>My practice is named Siochain — it's an Irish word meaning peace. That's what I'm here to help people find. Not the absence of hard things, but the capacity to carry them.</p>
+      </div>
+      <button class="expand-toggle" onclick="toggleExpand('amber-full', this)">Show full essay &darr;</button>
+      <div class="expandable-content" id="amber-full">
+        <div class="preview-content">
+          <p>I currently work primarily through telehealth, which matters more than people realize. Many of my clients live with chronic physical conditions — autoimmune disorders, cardiac issues, conditions that make leaving the house on a difficult day a genuine barrier. Telehealth means they can still have their session even when their body isn't cooperating. I understand that reality personally as well as professionally.</p>
+          <p>My practice is intentionally LGBTQ+-affirming and polyamory-inclusive. In suburban Chester County, that's rarer than it should be. I hear regularly from clients who spent months searching for a provider who wouldn't treat their identity as a problem to be managed.</p>
+          <p>What holds me back right now is not ambition or skill — it's infrastructure. As a solo practice owner, every dollar I spend on technology, professional development, or sliding scale support for clients who can't afford full fee comes directly out of my ability to keep the practice running.</p>
+          <p>Here is what $10,000 would concretely make possible: More clients who can't afford private pay rates. Better technology for a better client experience. Continuing education in health psychology and medical trauma — an undertrained area in mainstream clinical social work. A real directory and marketing presence so the clients who need exactly what I offer can actually find me.</p>
+          <p>I am not a large organization. I do not have a development team or a grants coordinator. I am a therapist with a laptop and a genuine calling — and I am building something real in a community that needs it.</p>
+          <p>The Amber Grant goes to women who are doing the work. I am doing the work.</p>
+          <p><em>— Maura Rupp, LCSW, Siochain Hope Counseling, LLC</em></p>
+          <p style="color:var(--terra);font-size:12px;">Note: This is a draft. Review in your own voice and change anything that doesn't sound like you. Amber Grant responds to authentic narratives.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="btn btn-yes" onclick="selectItem('amber','yes',0,'Amber Grant — draft looks good, I&apos;ll submit myself at ambergrant.com')">Draft looks good, I&rsquo;ll submit</button>
+      <button class="btn btn-yes" onclick="selectItem('amber','yes',0,'Amber Grant — draft looks good, Michael submits with me on a call')" style="background:#5a7a5d;">Michael submits with me</button>
+      <button class="btn btn-edit" onclick="selectItem('amber','edit',0,'Amber Grant — wants edits to essay')">Want edits first</button>
+      <button class="btn btn-later" onclick="selectItem('amber','later',0,'Amber Grant')">Later</button>
+      <span class="selection-badge" id="badge-amber"></span>
+    </div>
+  </div>
+
+  <!-- 5b Heard Grant -->
+  <div class="item-card" id="card-heard">
+    <div class="card-header">
+      <div class="card-tag tag-grant">Grant &mdash; Amount varies</div>
+      <div class="card-title">Heard Grant — for Therapists in Private Practice</div>
+      <div class="card-meta">
+        A grant specifically for therapists in solo private practice. Heard is a financial platform built for therapists. Michael can draft the application — need to verify the current cycle is open. Amount varies by cycle.
+      </div>
+      <div class="income-impact impact-0">Amount varies &mdash; check heard.business for current cycle</div>
+    </div>
+    <div class="card-actions">
+      <button class="btn btn-yes" onclick="selectItem('heard','yes',0,'Heard Grant — Michael checks status and drafts application')">Interested, check the status</button>
+      <button class="btn btn-later" onclick="selectItem('heard','later',0,'Heard Grant')">Later</button>
+      <span class="selection-badge" id="badge-heard"></span>
+    </div>
+  </div>
+
+  <!-- 5c NHSC -->
+  <div class="item-card" id="card-nhsc">
+    <div class="card-header">
+      <div class="card-tag tag-grant">Loan Repayment &mdash; $30,000–$55,000</div>
+      <div class="card-title">NHSC Loan Repayment Program</div>
+      <div class="card-meta">
+        Federal program that pays off student loans tax-free — $30,000 for half-time or $55,000 for full-time — in exchange for a 2-year service commitment in an underserved area. <strong>Only relevant if you have federal student loan debt.</strong> Michael can check whether Chester County qualifies and what sites are available.
+      </div>
+      <div class="income-impact">$30,000–$55,000 tax-free <span style="font-weight:400;font-size:11px">(if eligible)</span></div>
+    </div>
+    <div class="preview-block">
+      <div class="preview-label">Two paths to eligibility</div>
+      <div class="preview-content">
+        <p><strong>Path 1 — Private practice site approval:</strong> Your practice is in a Mental Health Health Professional Shortage Area (HPSA). You accept some Medicaid clients. Michael checks whether Chester County qualifies.</p>
+        <p><strong>Path 2 — Part-time at an approved site:</strong> You keep your practice and add 20 hours/week at a federally qualified health center (FQHC) in Chester County for 2 years. Award: $30,000 in loan repayment.</p>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="btn btn-yes" onclick="selectItem('nhsc','yes',0,'NHSC Loan Repayment — you have student loans, Michael checks HPSA eligibility for Chester County')">Yes, I have student loans — check it</button>
+      <button class="btn btn-edit" onclick="selectItem('nhsc','no-loans',0,'NHSC — no student loans')">No student loans</button>
+      <button class="btn btn-later" onclick="selectItem('nhsc','later',0,'NHSC Loan Repayment')">Later</button>
+      <span class="selection-badge" id="badge-nhsc"></span>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       SECTION 6: INCOME PICTURE
+  ========================================================= -->
+  <div class="section-header">
+    <h2>Section 6 &mdash; Your Full Income Picture</h2>
+    <div class="sh-rule"></div>
+  </div>
+
+  <div class="item-card" style="overflow:visible;">
+    <div class="card-header">
+      <div class="card-title" style="font-size:15px;">Income scenarios based on your inputs</div>
+    </div>
+    <table class="scenario-table">
+      <thead>
+        <tr>
+          <th>Scenario</th>
+          <th>Annual Income</th>
+          <th>Additional</th>
+        </tr>
+      </thead>
+      <tbody id="scenario-tbody">
+        <!-- populated by JS -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- =========================================================
+       FINAL PLAN
+  ========================================================= -->
+  <div id="final-plan">
+    <h2>Your Plan</h2>
+    <div class="plan-columns">
+      <div class="plan-col col-michael">
+        <h3>Michael does (without needing anything from you)</h3>
+        <ul class="plan-list" id="plan-michael">
+          <li class="empty-note">Nothing selected yet</li>
+        </ul>
+      </div>
+      <div class="plan-col col-you">
+        <h3>You need to do (with Michael&rsquo;s help)</h3>
+        <ul class="plan-list" id="plan-you">
+          <li class="empty-note">Nothing selected yet</li>
+        </ul>
+      </div>
+      <div class="plan-col col-later">
+        <h3>Still thinking</h3>
+        <ul class="plan-list" id="plan-later">
+          <li class="empty-note">Nothing deferred yet</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin: 28px 0 20px;">
+      <label style="display:block;font-size:13px;font-weight:600;color:var(--mid);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Questions, notes, or anything else</label>
+      <textarea id="maura-notes" placeholder="Anything you want Michael to know — questions, hesitations, things that didn't quite fit the buttons above, context about your practice, or just 'call me.' Nothing is too small." style="width:100%;min-height:120px;border:1px solid var(--border);border-radius:8px;padding:12px 14px;font-size:14px;font-family:inherit;color:var(--charcoal);background:var(--cream);resize:vertical;line-height:1.6;transition:border-color 0.15s;" onfocus="this.style.borderColor='var(--sage)';this.style.background='white'" onblur="this.style.borderColor='var(--border)';this.style.background='var(--cream)'"></textarea>
+    </div>
+    <button class="send-btn" onclick="sendToMichael()">Send this to Michael &rarr;</button>
+    <div class="send-btn-note">Sends your selections and any notes directly to Michael. He'll follow up within a day or two.</div>
+  </div>
+
+</div><!-- /content -->
+
+<script>
+// ── State ──────────────────────────────────────────────────────────
+const selections = {};
+
+// Item definitions: id, uplift, michael-handles (vs requires-you), description
+const ITEMS = {
+  cookie:    { uplift: 0,     michael: true,  youLabel: null,        desc: 'Cookie banner' },
+  privacy:   { uplift: 0,     michael: true,  youLabel: null,        desc: 'Privacy policy' },
+  hipaa:     { uplift: 0,     michael: true,  youLabel: null,        desc: 'HIPAA Notice of Privacy Practices' },
+  pt:        { uplift: 8100,  michael: false, youLabel: 'Share PT login so Michael can set up your Psychology Today profile, or paste the bio yourself', desc: 'Psychology Today listing (+$8,100/yr)' },
+  td:        { uplift: 2700,  michael: true,  youLabel: null,        desc: 'TherapyDen free listing (+$2,700/yr)' },
+  gbp:       { uplift: 4050,  michael: false, youLabel: 'Verify Google Business Profile by phone (you receive a code, Michael does the rest)', desc: 'Google Business Profile (+$4,050/yr)' },
+  sharecare: { uplift: 1350,  michael: true,  youLabel: null,        desc: 'Fix Sharecare listing (+$1,350/yr)' },
+  website:   { uplift: 5400,  michael: true,  youLabel: null,        desc: 'New 9-page SEO website (+$5,400/yr)' },
+  sap:       { uplift: 27000, michael: false, youLabel: 'Confirm 49 CFR Part 40 SAP training is current — Michael handles all outreach', desc: 'SAP evaluation outreach (+$27,000/yr at 5/mo)' },
+  amber:     { uplift: 0,     michael: false, youLabel: 'Submit Amber Grant essay at ambergrant.com ($15 fee) — draft is ready', desc: 'Amber Grant application ($10,000 potential)' },
+  heard:     { uplift: 0,     michael: true,  youLabel: null,        desc: 'Heard Grant (Michael checks status and drafts)' },
+  nhsc:      { uplift: 0,     michael: false, youLabel: 'Confirm federal student loan balance so Michael can run NHSC eligibility check', desc: 'NHSC Loan Repayment eligibility check ($30k–$55k)' },
+};
+
+// ── Income calc ────────────────────────────────────────────────────
+function getInputs() {
+  return {
+    spw: parseFloat(document.getElementById('sessions-per-week').value) || 0,
+    rate: parseFloat(document.getElementById('rate-per-session').value) || 0,
+    wpy: parseFloat(document.getElementById('weeks-per-year').value) || 0,
+  };
+}
+
+function currentIncome() {
+  const { spw, rate, wpy } = getInputs();
+  return spw * rate * wpy;
+}
+
+function fmt(n) {
+  return '$' + Math.round(n).toLocaleString('en-US');
+}
+
+function totalUplift() {
+  let sum = 0;
+  for (const [id, sel] of Object.entries(selections)) {
+    if (sel === 'yes' || sel === 'verify') {
+      sum += ITEMS[id].uplift;
+    }
+  }
+  return sum;
+}
+
+// ── Recalc all dynamic numbers ─────────────────────────────────────
+function recalcAll() {
+  const base = currentIncome();
+  document.getElementById('current-income').textContent = fmt(base);
+
+  const uplift = totalUplift();
+  const upliftFmt = uplift > 0 ? '+' + fmt(uplift) : '+$0';
+  document.getElementById('uplift-counter-display').textContent = upliftFmt;
+  document.getElementById('uplift-display').textContent = upliftFmt;
+
+  // Yes count badge
+  const yesCount = Object.values(selections).filter(s => s === 'yes' || s === 'verify').length;
+  const badge = document.getElementById('yes-count-badge');
+  badge.textContent = yesCount + (yesCount === 1 ? ' item selected' : ' items selected');
+
+  updateScenarios(base, uplift);
+}
+
+// ── Scenario table ─────────────────────────────────────────────────
+function updateScenarios(base, selectedUplift) {
+  const ptUplift  = ITEMS.pt.uplift;
+  const sapUplift = ITEMS.sap.uplift;
+  const webUplift = ITEMS.website.uplift;
+  const allUplift = Object.values(ITEMS).reduce((a, b) => a + b.uplift, 0);
+
+  const rows = [
+    { label: 'Current (do nothing)', amount: base, delta: null, cls: 'sc-current' },
+    { label: '+ Psychology Today only', amount: base + ptUplift, delta: ptUplift, cls: '' },
+    { label: '+ SAP evals (5/month)', amount: base + sapUplift, delta: sapUplift, cls: '' },
+    { label: '+ New website', amount: base + webUplift, delta: webUplift, cls: '' },
+    { label: '+ Everything you selected', amount: base + selectedUplift, delta: selectedUplift, cls: 'sc-selected' },
+    { label: '+ All options (maximum)', amount: base + allUplift, delta: allUplift, cls: 'sc-max' },
+  ];
+
+  const tbody = document.getElementById('scenario-tbody');
+  tbody.innerHTML = rows.map(r => `
+    <tr class="${r.cls}">
+      <td>${r.label}</td>
+      <td class="sc-amount">${fmt(r.amount)}</td>
+      <td class="sc-delta">${r.delta !== null && r.delta > 0 ? '+' + fmt(r.delta) : (r.delta === 0 ? '—' : '')}</td>
+    </tr>
+  `).join('');
+}
+
+// ── Select item ────────────────────────────────────────────────────
+function selectItem(id, action, uplift, planNote) {
+  // Toggle off if clicking same action again
+  if (selections[id] === action) {
+    delete selections[id];
+    document.getElementById('card-' + id).classList.remove('selected-yes', 'selected-later');
+    document.getElementById('badge-' + id).textContent = '';
+    document.getElementById('badge-' + id).classList.remove('visible');
+    recalcAll();
+    updatePlan();
+    return;
+  }
+
+  selections[id] = action;
+  const card = document.getElementById('card-' + id);
+  const badge = document.getElementById('badge-' + id);
+
+  card.classList.remove('selected-yes', 'selected-later');
+  if (action === 'yes' || action === 'verify') {
+    card.classList.add('selected-yes');
+    badge.textContent = action === 'verify' ? 'Need to verify' : 'Yes';
+  } else if (action === 'later' || action === 'no-loans') {
+    card.classList.add('selected-later');
+    badge.textContent = action === 'no-loans' ? 'No student loans' : 'Later';
+  } else if (action === 'edit') {
+    badge.textContent = 'Want edits';
+  } else {
+    badge.textContent = action;
+  }
+  badge.classList.add('visible');
+
+  recalcAll();
+  updatePlan();
+}
+
+// ── Build plan columns ─────────────────────────────────────────────
+function updatePlan() {
+  const michaelItems = [];
+  const youItems = [];
+  const laterItems = [];
+
+  for (const [id, action] of Object.entries(selections)) {
+    const item = ITEMS[id];
+    if (action === 'yes' || action === 'verify') {
+      if (item.michael) {
+        michaelItems.push(item.desc);
+      } else {
+        if (item.youLabel) youItems.push(item.youLabel);
+      }
+    } else if (action === 'later' || action === 'no-loans') {
+      laterItems.push(item.desc + (action === 'no-loans' ? ' (no student loans)' : ''));
+    } else if (action === 'edit') {
+      youItems.push(item.desc + ' — review draft and send edits to Michael');
+    }
+  }
+
+  renderList('plan-michael', michaelItems, 'Nothing selected yet');
+  renderList('plan-you', youItems, 'Nothing selected yet');
+  renderList('plan-later', laterItems, 'Nothing deferred yet');
+}
+
+function renderList(id, items, emptyNote) {
+  const el = document.getElementById(id);
+  if (items.length === 0) {
+    el.innerHTML = '<li class="empty-note">' + emptyNote + '</li>';
+  } else {
+    el.innerHTML = items.map(t => '<li>' + escHtml(t) + '</li>').join('');
+  }
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── Expand toggles ─────────────────────────────────────────────────
+function toggleExpand(id, btn) {
+  const el = document.getElementById(id);
+  if (el.classList.contains('open')) {
+    el.classList.remove('open');
+    btn.textContent = btn.textContent.replace('&uarr;','').replace('↑','').trim() + ' ↓';
+    btn.textContent = btn.dataset.openLabel || btn.textContent.replace('↓','').trim() + ' ↓';
+  } else {
+    if (!btn.dataset.openLabel) btn.dataset.openLabel = btn.textContent;
+    el.classList.add('open');
+    btn.textContent = btn.dataset.openLabel.replace('↓','↑').replace('&darr;','↑');
+  }
+}
+
+// ── Scroll to plan ─────────────────────────────────────────────────
+function scrollToPlan() {
+  document.getElementById('final-plan').scrollIntoView({ behavior: 'smooth' });
+}
+
+// ── Send to Michael ────────────────────────────────────────────────
+// Replace WEB3FORMS_KEY below with your key from web3forms.com (free, 2 min, just enter your email)
+const WEB3FORMS_KEY = 'YOUR_WEB3FORMS_KEY_HERE';
+
+function buildSummaryText() {
+  const { spw, rate, wpy } = getInputs();
+  const base = currentIncome();
+  const uplift = totalUplift();
+
+  let body = 'Hi Michael,\n\nHere are my selections from the practice growth plan.\n\n';
+  body += '--- MY PRACTICE INFO ---\n';
+  body += 'Sessions/week: ' + spw + '\n';
+  body += 'Rate: $' + rate + '/session\n';
+  body += 'Weeks/year: ' + wpy + '\n';
+  body += 'Current annual income: ' + fmt(base) + '\n\n';
+
+  const yesItems = [], editItems = [], laterItems2 = [], verifyItems = [];
+  for (const [id, action] of Object.entries(selections)) {
+    const item = ITEMS[id];
+    if (action === 'yes') yesItems.push(item.desc);
+    else if (action === 'verify') verifyItems.push(item.desc);
+    else if (action === 'edit') editItems.push(item.desc);
+    else if (action === 'later' || action === 'no-loans') laterItems2.push(item.desc);
+  }
+
+  if (yesItems.length > 0) {
+    body += '--- YES, DO THESE ---\n';
+    yesItems.forEach(t => body += '- ' + t + '\n');
+    body += '\n';
+  }
+  if (verifyItems.length > 0) {
+    body += '--- NEED TO VERIFY FIRST ---\n';
+    verifyItems.forEach(t => body += '- ' + t + '\n');
+    body += '\n';
+  }
+  if (editItems.length > 0) {
+    body += '--- WANT EDITS ---\n';
+    editItems.forEach(t => body += '- ' + t + '\n');
+    body += '\n';
+  }
+  if (laterItems2.length > 0) {
+    body += '--- LATER / STILL THINKING ---\n';
+    laterItems2.forEach(t => body += '- ' + t + '\n');
+    body += '\n';
+  }
+
+  if (uplift > 0) {
+    body += '--- ESTIMATED UPLIFT ---\n';
+    body += 'Additional annual income from selected items: +' + fmt(uplift) + '\n';
+    body += 'Projected total: ' + fmt(base + uplift) + '/year\n\n';
+  }
+
+  if (Object.keys(selections).length === 0) {
+    body += '(No selections made yet — sending to start the conversation.)\n\n';
+  }
+
+  const notes = (document.getElementById('maura-notes') || {}).value || '';
+  if (notes.trim()) {
+    body += '--- NOTES / QUESTIONS FROM MAURA ---\n' + notes.trim() + '\n\n';
+  }
+
+  body += '-- \nSent from the Siochain practice growth portal';
+  return body;
+}
+
+async function sendToMichael() {
+  const btn = document.querySelector('.send-btn');
+  const note = document.querySelector('.send-btn-note');
+  const summary = buildSummaryText();
+
+  // If key is not yet configured, fall back to mailto
+  if (WEB3FORMS_KEY === 'YOUR_WEB3FORMS_KEY_HERE') {
+    const subject = encodeURIComponent('Siochain — my selections');
+    const encodedBody = encodeURIComponent(summary);
+    window.location.href = 'mailto:michael.eisinger@gmail.com?subject=' + subject + '&body=' + encodedBody;
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_KEY,
+        subject: 'Siochain — my selections',
+        from_name: 'Maura Rupp (Siochain portal)',
+        message: summary
+      })
+    });
+    const data = await res.json();
+    if (data.success) {
+      btn.textContent = 'Sent to Michael';
+      btn.style.background = '#3a7d44';
+      note.textContent = "You're all set. Michael will follow up within a day or two.";
+    } else {
+      throw new Error('API error');
+    }
+  } catch (e) {
+    // Fallback to mailto if fetch fails
+    btn.disabled = false;
+    btn.textContent = 'Send this to Michael \u2192';
+    const subject = encodeURIComponent('Siochain — my selections');
+    const encodedBody = encodeURIComponent(summary);
+    window.location.href = 'mailto:michael.eisinger@gmail.com?subject=' + subject + '&body=' + encodedBody;
+  }
+}
+
+// ── Init ───────────────────────────────────────────────────────────
+recalcAll();
+</script>
+</body>
+</html>
