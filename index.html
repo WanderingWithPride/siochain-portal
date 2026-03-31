@@ -745,20 +745,20 @@ body {
     <div class="inputs-row">
       <div class="input-group">
         <label>Sessions per week</label>
-        <input type="number" id="sessions-per-week" value="15" min="1" max="60" oninput="recalcAll()">
+        <input type="number" id="sessions-per-week" value="" placeholder="e.g. 15" min="1" max="60" oninput="recalcAll()">
       </div>
       <div class="input-group">
         <label>Rate per session ($)</label>
-        <input type="number" id="rate-per-session" value="130" min="1" oninput="recalcAll()">
+        <input type="number" id="rate-per-session" value="" placeholder="e.g. 130" min="1" oninput="recalcAll()">
       </div>
       <div class="input-group">
         <label>Weeks per year</label>
-        <input type="number" id="weeks-per-year" value="48" min="1" max="52" oninput="recalcAll()">
+        <input type="number" id="weeks-per-year" value="" placeholder="e.g. 48" min="1" max="52" oninput="recalcAll()">
       </div>
     </div>
     <div class="income-display">
       <div class="id-label">Your current annual income (estimated)</div>
-      <div class="id-amount" id="current-income">$93,600</div>
+      <div class="id-amount" id="current-income">—</div>
     </div>
   </div>
 
@@ -1429,8 +1429,10 @@ function totalUplift() {
 
 // ── Recalc all dynamic numbers ─────────────────────────────────────
 function recalcAll() {
-  const base = currentIncome();
-  document.getElementById('current-income').textContent = fmt(base);
+  const { spw, rate, wpy } = getInputs();
+  const hasInputs = spw > 0 && rate > 0 && wpy > 0;
+  const base = hasInputs ? spw * rate * wpy : 0;
+  document.getElementById('current-income').textContent = hasInputs ? fmt(base) : '—';
 
   const uplift = totalUplift();
   const upliftFmt = uplift > 0 ? '+' + fmt(uplift) : '+$0';
