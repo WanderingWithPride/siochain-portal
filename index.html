@@ -1636,11 +1636,11 @@ async function sendToMichael() {
   const note = document.querySelector('.send-btn-note');
   const summary = buildSummaryText();
 
-  // If key is not yet configured, fall back to mailto
+  // If key is not yet configured, open Gmail compose in a new tab
   if (WEB3FORMS_KEY === 'YOUR_WEB3FORMS_KEY_HERE') {
     const subject = encodeURIComponent('Siochain — my selections');
     const encodedBody = encodeURIComponent(summary);
-    window.location.href = 'mailto:michael.eisinger@gmail.com?subject=' + subject + '&body=' + encodedBody;
+    window.open('https://mail.google.com/mail/?view=cm&to=michael.eisinger%40gmail.com&su=' + subject + '&body=' + encodedBody, '_blank');
     return;
   }
 
@@ -1667,12 +1667,11 @@ async function sendToMichael() {
       throw new Error('API error');
     }
   } catch (e) {
-    // Fallback to mailto if fetch fails
     btn.disabled = false;
     btn.textContent = 'Send this to Michael \u2192';
     const subject = encodeURIComponent('Siochain — my selections');
     const encodedBody = encodeURIComponent(summary);
-    window.location.href = 'mailto:michael.eisinger@gmail.com?subject=' + subject + '&body=' + encodedBody;
+    window.open('https://mail.google.com/mail/?view=cm&to=michael.eisinger%40gmail.com&su=' + subject + '&body=' + encodedBody, '_blank');
   }
 }
 
